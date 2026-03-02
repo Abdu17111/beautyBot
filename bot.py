@@ -7,7 +7,6 @@ from utils import is_greeting
 from datetime import datetime
 import time
 import sqlite3
-x = 'hello world'
 bot = telebot.TeleBot(BOT_TOKEN)
 
 user_state = {}
@@ -263,3 +262,4 @@ if __name__ == "__main__":
             print("Перезапуск через 5 сек...")
 
             time.sleep(5)
+
