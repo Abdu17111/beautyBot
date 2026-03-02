@@ -5,7 +5,6 @@ from telebot import types
 
 load_dotenv()
 TOKEN = os.getenv('BOT_TOKEN')
-
 if not TOKEN:
     print("❌ Добавь BOT_TOKEN в .env файл!")
     exit()
@@ -136,28 +135,27 @@ def hello(message):
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
     text = message.text
-
     if text == '👋 О нас':
         about = (
             "✨ <b>Бьютилаб</b> — студия красоты у метро Проспект Мира.\n\n"
+            "📍 Адрес: Москва, ул. Щепкина, 28\n\n"
             "Мы создаём пространство, где каждая девушка чувствует заботу, комфорт и результат.\n"
             "Стерильность, современные материалы, опытные мастера и никакого стресса."
         )
         bot.send_message(message.chat.id, about, reply_markup=main_keyboard())
-
+        # Отправка геолокации
+        bot.send_location(message.chat.id, 55.77393, 37.63198)
     elif text == '💅 Услуги':
-        bot.send_message(message.chat.id, 
-                        "🛍️ <b>Выберите категорию услуг:</b>", 
-                        reply_markup=services_categories())
-
+        bot.send_message(message.chat.id,
+                         "🛍️ <b>Выберите категорию услуг:</b>",
+                         reply_markup=services_categories())
     elif text == '👩‍🎨 Наши мастера':
         text_msg = "👩‍🎨 <b>Наши мастера</b>\n\nВыберите мастера, чтобы узнать подробнее:"
         bot.send_message(message.chat.id, text_msg, reply_markup=masters_list_markup())
-
     elif text == '📅 Записаться':
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton(
-            '🚀 Записаться онлайн', 
+            '🚀 Записаться онлайн',
             url='https://n757778.yclients.com/company/712716/personal/menu?o='
         ))
         bot.send_message(
@@ -165,18 +163,16 @@ def handle_text(message):
             "💫 Переходи в онлайн-запись — выбери мастера, услугу и удобное время за 30 секунд!",
             reply_markup=markup
         )
-
     elif text == '📞 Контакты':
         contacts = (
             "📍 <b>Бьютилаб</b>\n"
             "ул. Щепкина 28, Москва\n"
             "м. Проспект Мира\n\n"
-            "📞 <a href='tel:+79774498581'>+7 (977) 449-85-81</a>\n"
+            "📞 <a href='tel:+79774498581'>+7 (933) 205-88-10</a>\n"
             "🕒 Ежедневно 10:00–22:00\n\n"
             "Напиши нам в любой момент — ответим максимально быстро ❤️"
         )
         bot.send_message(message.chat.id, contacts, reply_markup=main_keyboard())
-
     elif text == '❓ Помощь':
         help_text = (
             "❓ <b>Нужна помощь?</b>\n\n"
@@ -184,7 +180,7 @@ def handle_text(message):
             "пиши напрямую администратору:\n\n"
             "👉 @NONE скоро будет\n\n"
             "Мы ответим максимально быстро ❤️\n"
-            "Также можешь позвонить: +7 (888) 888-88-88"
+            "Также можешь позвонить: +7 (933) 205-88-10"
         )
         bot.send_message(message.chat.id, help_text, reply_markup=main_keyboard())
 
@@ -197,7 +193,6 @@ def callback_handler(call):
         except:
             pass
         bot.send_message(call.message.chat.id, "Главное меню:", reply_markup=main_keyboard())
-
     elif call.data == 'back_to_categories':
         bot.edit_message_text(
             "🛍️ <b>Выберите категорию услуг:</b>",
@@ -205,7 +200,6 @@ def callback_handler(call):
             call.message.message_id,
             reply_markup=services_categories()
         )
-
     elif call.data == 'back_to_masters':
         bot.edit_message_text(
             "👩‍🎨 <b>Наши мастера</b>\n\nВыберите мастера, чтобы узнать подробнее:",
@@ -213,7 +207,6 @@ def callback_handler(call):
             call.message.message_id,
             reply_markup=masters_list_markup()
         )
-
     elif call.data.startswith('cat_'):
         category = call.data
         if category == 'cat_nails':
@@ -250,14 +243,12 @@ def callback_handler(call):
                 "• Дневной макияж — 3500 ₽\n"
                 "• Вечерний макияж — 5000 ₽"
             )
-
         bot.edit_message_text(
             text,
             call.message.chat.id,
             call.message.message_id,
             reply_markup=back_to_services_markup()
         )
-
     elif call.data.startswith('master_'):
         name = call.data.split('_', 1)[1]
         master = next((m for m in MASTERS if m["name"] == name), None)
