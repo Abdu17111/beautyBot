@@ -207,6 +207,7 @@
 # if __name__ == '__main__':
 #     print("🚀 Бот Бьютилаб запущен...")
 #     bot.infinity_polling()
+import os
 import json
 from dotenv import load_dotenv
 import telebot
@@ -290,7 +291,7 @@ def broadcast_update(message):
     sent = 0
     for uid in list(users):
         try:
-            bot.send_message(uid, "🔄 <b>Бот обновлён!</b>\n\nПожалуйста нажмите <b>/start</b> чтобы увидеть новое меню ❤️\n\nСпасибо, что вы с нами ✨")
+            bot.send_message(uid, "🔄 Бот обновлён!\n\nМы добавили новые удобства и улучшения ❤️\nЧтобы увидеть все свежие изменения — пожалуйста, просто отправьте боту команду\n\n/start\n\nЭто займёт 2 секунды, и дальше всё будет обновляться автоматически ✨\nСпасибо, что вы с нами!")
             sent += 1
         except:
             pass
