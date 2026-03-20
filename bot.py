@@ -153,49 +153,49 @@ def callback_handler(call):
         text = "🍵 <b>Чай</b>\n\n• Зелёный: классический / с мелиссой\n• Чёрный: с бергамотом / классический\n• Травяной: гибискус с малиной\n\nЧтобы заказать чай нажмите кнопку ниже 👇"
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton('✍️ Написать @Wish_Lab', url='https://t.me/Wish_Lab'))
-        markup.add(types.InlineKeyboardButton('« Назад к угощению', callback_data='back_to_drinks'))
+        markup.add(types.InlineKeyboardButton('« Назад в меню↩️', callback_data='back_to_drinks'))
         bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=markup)
 
     elif call.data == 'drink_coffee':
         text = "☕ <b>Кофе</b>\n\n• Эспрессо / Американо / Капучино / Латте\n\nЧтобы заказать кофе нажмите кнопку ниже 👇"
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton('✍️ Написать @Wish_Lab', url='https://t.me/Wish_Lab'))
-        markup.add(types.InlineKeyboardButton('« Назад к угощению', callback_data='back_to_drinks'))
+        markup.add(types.InlineKeyboardButton('« Назад в меню↩️', callback_data='back_to_drinks'))
         bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=markup)
 
     elif call.data == 'drink_milk':
         text = "🥛 <b>Молоко на выбор</b>\n\n• миндальное • кокосовое • классическое\n\nЧтобы заказать молоко нажмите кнопку ниже 👇"
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton('✍️ Написать @Wish_Lab', url='https://t.me/Wish_Lab'))
-        markup.add(types.InlineKeyboardButton('« Назад к угощению', callback_data='back_to_drinks'))
+        markup.add(types.InlineKeyboardButton('« Назад в меню↩️', callback_data='back_to_drinks'))
         bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=markup)
 
     elif call.data == 'drink_syrup':
         text = "🍯 <b>Сиропы</b>\n\n• ванильный • карамельный • миндальный • кокосовый\n\nЧтобы заказать сироп нажмите кнопку ниже 👇"
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton('✍️ Написать @Wish_Lab', url='https://t.me/Wish_Lab'))
-        markup.add(types.InlineKeyboardButton('« Назад к угощению', callback_data='back_to_drinks'))
+        markup.add(types.InlineKeyboardButton('« Назад в меню↩️', callback_data='back_to_drinks'))
         bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=markup)
 
     elif call.data == 'drink_add':
         text = "🍋 <b>Дополнения</b>\n\n• корица • лимон\n\nЧтобы заказать дополнения нажмите кнопку ниже 👇"
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton('✍️ Написать @Wish_Lab', url='https://t.me/Wish_Lab'))
-        markup.add(types.InlineKeyboardButton('« Назад к угощению', callback_data='back_to_drinks'))
+        markup.add(types.InlineKeyboardButton('« Назад в меню↩️', callback_data='back_to_drinks'))
         bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=markup)
 
     elif call.data == 'drink_water':
         text = "🥤 <b>Вода</b>\n\n• Без газа / с лимоном\n\nЧтобы заказать воду нажмите кнопку ниже 👇"
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton('✍️ Написать @Wish_Lab', url='https://t.me/Wish_Lab'))
-        markup.add(types.InlineKeyboardButton('« Назад к угощению', callback_data='back_to_drinks'))
+        markup.add(types.InlineKeyboardButton('« Назад в меню↩️', callback_data='back_to_drinks'))
         bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=markup)
 
     elif call.data == 'drink_mood':
         text = "🥂 <b>Для настроения</b>\n\n• Игристое сухое / вино белое\n\nЧтобы заказать напиток для настроения нажмите кнопку ниже 👇"
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton('✍️ Написать @Wish_Lab', url='https://t.me/Wish_Lab'))
-        markup.add(types.InlineKeyboardButton('« Назад к угощению', callback_data='back_to_drinks'))
+        markup.add(types.InlineKeyboardButton('« Назад в меню↩️', callback_data='back_to_drinks'))
         bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=markup)
 
     elif call.data == 'back_to_drinks':
