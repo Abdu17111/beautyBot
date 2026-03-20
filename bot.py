@@ -317,7 +317,7 @@ def start(message):
 
 @bot.message_handler(commands=['update'])
 def broadcast_update(message):
-    if message.from_user.id !=  YOUR_ID:   # ←←← ЗАМЕНИ НА СВОЙ TELEGRAM ID !!!
+    if message.from_user.id !=  6177817315:   # ←←← ЗАМЕНИ НА СВОЙ TELEGRAM ID !!!
         return
     sent = 0
     for uid in list(users):
