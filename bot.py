@@ -1,3 +1,36 @@
+Skip to content
+11Scream11
+beautyBot
+Repository navigation
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security and quality
+Insights
+Settings
+Files
+Go to file
+t
+bot.py
+beautyBot
+/bot.py
+11Scream11
+11Scream11
+Update bot.py
+4494e24
+ · 
+7 minutes ago
+beautyBot
+/bot.py
+
+Code
+
+Blame
+309 lines (270 loc) · 18.7 KB
+def ban_user(message):
 import os
 import json
 import time
